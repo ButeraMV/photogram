@@ -1,7 +1,3 @@
-# Create multiple posts using factories.
-# User visits the root route.
-# User can see the comments and images of the posts we’ve created.
-
 require 'rails_helper'
 
 feature 'Index displays a list of posts' do
