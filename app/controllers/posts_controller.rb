@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :edit, :update]
 
   def index
     @posts = Post.all
@@ -18,8 +18,21 @@ class PostsController < ApplicationController
       flash[:success] = 'Post created!'
       redirect_to @post
     else
-      flash[:alert] = 'Please attach an image'
+      flash[:alert] = 'Something is wrong with your form'
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      flash[:success] = 'Post updated'
+      redirect_to @post
+    else
+      flash[:alert] = 'Something is wrong with your form'
+      render :edit
     end
   end
 

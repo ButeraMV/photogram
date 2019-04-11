@@ -16,6 +16,6 @@ feature 'Creating posts' do
     click_link 'New Post'
     fill_in 'Caption', with: 'nom nom nom #coffeetime'
     click_button 'Create Post'
-    expect(page).to have_content('Please attach an image')
+    expect(page).to have_content('Something is wrong with your form')
   end
 end
