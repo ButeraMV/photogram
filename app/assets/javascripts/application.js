@@ -16,3 +16,8 @@
 //= require_tree .
 //= require jquery
 //= require bootstrap-sprockets
+
+function loadFile(event) {
+  var output = document.getElementById('image-preview');
+  output.src = URL.createObjectURL(event.target.files[0]);
+};

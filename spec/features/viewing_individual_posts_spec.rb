@@ -2,8 +2,8 @@ require 'rails_helper'
 
 feature 'Can view individual posts' do
   scenario 'Can click and view a single post' do
-    post = create(:post, caption: 'Post 1')
-    user = create(:user)
+    user = create :user
+    post = create(:post, user_id: user.id)
     sign_in_with user
     visit '/'
     visit '/'
